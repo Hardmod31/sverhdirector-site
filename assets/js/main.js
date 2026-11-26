@@ -11,3 +11,15 @@
     reveal.forEach(function(el){el.classList.add('reveal');io.observe(el);});
   }
 })();
+
+  // цели Метрики
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest ? e.target.closest('a') : null;
+    if (!a) return;
+    var h = a.getAttribute('href') || '';
+    var goal = null;
+    if (h.indexOf('t.me') >= 0) goal = 'telegram_click';
+    else if (h.indexOf('mailto:') === 0) goal = 'email_click';
+    else if (h.indexOf('course.html') >= 0) goal = 'course_click';
+    if (goal && window.ym) window.ym(114694891, 'reachGoal', goal);
+  }, true);
