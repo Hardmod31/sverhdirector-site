@@ -1,0 +1,9 @@
+__pycache__/
+_preview/
+*.pyc
+build_site.py
+assemble.py
+content_home.py
+content_pages.py
+assets/img/_f*.png
+assets/img/_frame_test.png
