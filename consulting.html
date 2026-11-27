@@ -10,7 +10,15 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://sverhdirector.ru/consulting.html">
 <meta property="og:image" content="https://sverhdirector.ru/assets/img/author.jpg">
+<meta name="theme-color" content="#F7FAF6" id="themeColor">
 <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+<script>
+(function(){var t=null;try{t=localStorage.getItem('sd-theme')}catch(e){}
+try{var q=new URLSearchParams(location.search).get('theme');if(q==='dark'||q==='light'){t=q}}catch(e){}
+if(t!=='light'&&t!=='dark'){t=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';}
+document.documentElement.setAttribute('data-theme',t);
+document.documentElement.style.colorScheme=t;})();
+</script>
 <link rel="stylesheet" href="/assets/css/style.css">
 <script type="text/javascript">
 (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
@@ -37,7 +45,13 @@ ym(114694891, "init", {clickmap:true, trackLinks:true, accurateTrackBounce:true,
       <a href="/blog.html" data-nav="blog">Блог</a>
       <a href="/contacts.html" data-nav="contacts">Контакты</a>
     </nav>
-    <a class="btn btn--gold" href="https://t.me/sverhdirector_bot" target="_blank" rel="noopener">Начать обучение</a>
+    <div class="header__actions">
+      <a class="btn btn--gold" href="https://t.me/sverhdirector_bot" target="_blank" rel="noopener">Начать обучение</a>
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Переключить тему" aria-pressed="false" title="Тёмная тема">
+        <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.6v2.2M12 19.2v2.2M2.6 12h2.2M19.2 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M18.7 5.3l-1.6 1.6M6.9 17.1l-1.6 1.6"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.4 14.6A8.6 8.6 0 1 1 9.4 3.6a7 7 0 0 0 11 11z"/></svg>
+      </button>
+    </div>
     <button class="burger" id="burger" aria-label="Меню"><span></span><span></span><span></span></button>
   </div>
 </header>
